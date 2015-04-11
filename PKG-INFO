@@ -1,19 +1,19 @@
 Metadata-Version: 1.0
-Name: mmhash
-Version: 1.336
+Name: python3-mmhash
+Version: 1.0
 Summary: MurmurHash2 http://murmurhash.googlepages.com/
-Home-page: UNKNOWN
-Author: UNKNOWN
-Author-email: UNKNOWN
-License: UNKNOWN
+Home-page: https://github.com/gillesgagniard/python3-mmhash
+Author: Gilles Gagniard
+Author-email: gilles@gagniard.org
+License: MIT License
 Description: 
         murmurhash is a fast hash function ::
         >>> import mmhash
         
-        >>> print mmhash.get_unsigned_hash("stdyun.com zsp007@gmail.com")
+        >>> print(mmhash.get_unsigned_hash("stdyun.com zsp007@gmail.com"))
         11740402118952761905
         
-        >>> print mmhash.get_hash("stdyun.com zsp007@gmail.com")
+        >>> print(mmhash.get_hash("stdyun.com zsp007@gmail.com"))
         -6706341954756789711
         
         
@@ -21,6 +21,8 @@ Description:
         MurmurHash2, 64-bit versions, by Austin Appleby
         
         Modified by changsheng@douban.com
+
+        Ported to Python3 by gilles@gagniard.org
         
         zsp windows,linux python lib
         

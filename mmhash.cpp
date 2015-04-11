@@ -85,7 +85,7 @@ static PyObject * get_hash(PyObject *self,PyObject *args) {
 	int64_t h =  mmhash_64(guid,len);
 	/* return Py_BuildValue("l",h); */
 #if defined(__x86_64__) || defined(_M_X64)
-	return PyInt_FromLong(h);
+	return PyLong_FromLong(h);
 #else
 	return PyLong_FromLongLong(h);
 #endif
@@ -98,6 +98,19 @@ static PyMethodDef methods[] = {
 	{NULL,NULL,0,NULL}
 };
 
-PyMODINIT_FUNC initmmhash() {
-	Py_InitModule3("mmhash", methods, "MurmurHash2 hash algorithm extension module.");
+static struct PyModuleDef moduledef = {
+  PyModuleDef_HEAD_INIT,
+  "mmhash",
+  NULL,
+  -1,
+  methods,
+  NULL,
+  NULL,
+  NULL,
+  NULL
+};
+
+PyMODINIT_FUNC PyInit_mmhash() {
+  PyObject* mod = PyModule_Create(&moduledef);
+  return mod;
 }
