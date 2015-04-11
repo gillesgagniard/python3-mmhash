@@ -3,6 +3,9 @@ from distutils.core import setup, Extension
 setup(
         name = 'python3-mmhash',
         version = '1.0',
+        maintainer = 'Gilles Gagniard',
+        maintainer_email = 'gilles@gagniard.org',
+        url = 'https://github.com/gillesgagniard/python3-mmhash',
         ext_modules = [
             Extension('mmhash', ['mmhash.cpp'],),
             ],
